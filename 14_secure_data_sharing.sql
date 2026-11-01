@@ -1,0 +1,26 @@
+-- 14 | Secure Data Sharing
+-- THEORY
+-- A provider adds selected objects to a share and authorizes consumer accounts.
+-- The consumer creates a database from that share; shared objects are read-only.
+-- Data is not copied into consumer storage. Consumers use their own warehouse
+-- compute to query the shared objects. Provider updates are visible through the share.
+-- A secure view can expose only approved columns/rows or aggregated data.
+--
+-- A second Snowflake account is needed to test provider-to-consumer sharing.
+-- The SQL below is a template only. Replace identifiers and run only after
+-- confirming account locator, privileges, and sharing requirements.
+
+-- Provider-side illustrative template (not executed):
+-- CREATE SHARE SALES_DEMO_SHARE;
+-- GRANT USAGE ON DATABASE LEARNING_DB TO SHARE SALES_DEMO_SHARE;
+-- GRANT USAGE ON SCHEMA LEARNING_DB.DATA_ENGINEERING TO SHARE SALES_DEMO_SHARE;
+-- GRANT SELECT ON VIEW LEARNING_DB.DATA_ENGINEERING.DAILY_ORDER_REVENUE
+--     TO SHARE SALES_DEMO_SHARE;
+-- ALTER SHARE SALES_DEMO_SHARE
+--     ADD ACCOUNTS = <consumer_account_identifier>;
+--
+-- Consumer-side illustrative template (run by consumer account admin):
+-- CREATE DATABASE SHARED_SALES
+--     FROM SHARE <provider_account_identifier>.SALES_DEMO_SHARE;
+--
+-- This account has no configured second consumer, so no share is created here.
