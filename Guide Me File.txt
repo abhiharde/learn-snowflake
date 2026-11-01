@@ -1,0 +1,27 @@
+## Fast-track plan for tomorrow - 
+
+1. Architecture and performance: storage, micro-partitions, virtual warehouses, query pruning, caching, and scaling.
+2. Data engineering workflows: stages, COPY INTO, Snowpipe, streams, tasks, MERGE, and SCD Type 2.
+3. Security and governance: RBAC, roles and grants, masking policies, and row access policies.
+4. Cortex and agents: where Cortex fits, how an agent can use search or analytics tools, and how to build a simple one in your trial account.
+5. Mock interview: scenario questions with feedback on your answers.
+
+
+Creating agent, orcestrating it, 
+Creating sementic view and adding it to an agent
+About stream and tasks
+storage
+micro-partitions
+virtual warehouses
+query pruning
+caching
+scaling
+MERGE
+RBAC
+roles and grants
+Zero-copy cloning and Time Travel
+Slowly Changing Dimensions (SCD) Type 2
+COPY INTO
+Dynamic Tables
+Secure Data Sharing
+data masking and row access policies
